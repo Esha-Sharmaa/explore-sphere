@@ -1,12 +1,19 @@
 import { FaBars } from "react-icons/fa6";
 import { IoSearchOutline } from "react-icons/io5";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "./utils/appSlice";
+import logo from "../images/png/White logo - no background.png"
 const Head = () => {
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(toggleMenu());
+  }
   return (
-    <div className="flex justify-between items-center px-8 py-4 gap-6 shadow-lg">
-      <div className="flex w-2/12">
-        <FaBars size={30} />
-        <span>ExploreSearch</span>
+    <div className="flex justify-between items-center px-8 py-4 gap-6">
+      <div className="flex w-2/12 items-center">
+        <FaBars size={25} onClick={handleClick} className="hover:cursor-pointer"/>
+        <img src={logo}  alt="logo" className="w-[180px]"/>
       </div>
       <div className="flex  w-6/12">
         <input
