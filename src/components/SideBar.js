@@ -7,7 +7,7 @@ const SideBar = () => {
   const showSlideBar = useSelector((store) => store.app.isMenuOpen);
   return (
     showSlideBar && (
-      <div className="col-span-1 w-[14rem] px-6 box-sizing transition-all duration-500 ">
+      <div className="sticky overflow-y-auto h-full bg-white col-span-1 w-[14rem] px-6 box-sizing transition-all duration-500 ">
         <div className="flex gap-5  font-roboto hover:bg-slate-100 hover:cursor-pointer rounded-lg mb-2 p-2">
           <FaHome size={25} />
           <span> Home</span>
