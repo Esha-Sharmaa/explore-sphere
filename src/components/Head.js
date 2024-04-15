@@ -26,10 +26,10 @@ const Head = () => {
           className="bg-[#f8f8f8] w-[10%] rounded-r-full px-4 border border-gray-300 h-10 cursor-pointer"
         />
       </div>
-      <diV className="flex w-2/12 justify-end">
+      <div className="flex w-2/12 justify-end">
         <BsThreeDotsVertical size={30} />
         <button> Sign in </button>
-      </diV>
+      </div>
     </div>
   );
 };
