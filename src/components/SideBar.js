@@ -5,7 +5,6 @@ import { MdOutlineSubscriptions } from "react-icons/md";
 import { useSelector } from "react-redux";
 const SideBar = () => {
   const showSlideBar = useSelector((store) => store.app.isMenuOpen);
-  console.log(showSlideBar);
   return (
     showSlideBar && (
       <div className="sticky bg-white col-span-1  px-6 box-sizing transition-all duration-500  self-start  top-0 pt-24">

@@ -5,6 +5,7 @@ import Head from "./components/Head";
 import Body from "./components/Body";
 import MainContainer from "./components/MainContainer";
 import Watch from "./components/Watch";
+import SearchResults from "./components/SearchResults";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Body />}>
               <Route index element={<MainContainer />} />
               <Route path="watch" element={<Watch />} />
+              <Route path="results" element={<SearchResults/>}/>
             </Route>
           </Routes>
         </div>

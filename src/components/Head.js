@@ -74,19 +74,27 @@ const Head = () => {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           onFocus={() => setShowSuggestions(true)}
-          onBlur={() => setShowSuggestions(false)}
+          onBlur={() => setTimeout(() => setShowSuggestions(false), 2000)}
         />
         <IoSearchOutline
           size={35}
           className="bg-[#f8f8f8] w-[10%] rounded-r-full px-4 border border-gray-300 h-10 cursor-pointer"
         />
         {showSuggestions && (
-          <div className="fixed block top-16   rounded-lg z-10 bg-white  border-2 ">
-            {suggestions.map((suggestion) => (
-              <p className="font-robot pl-8 py-2 rounded hover:cursor-pointer hover:bg-slate-200">
+          <div className="fixed block top-16 rounded-lg z-10 bg-white  border-2 ">
+            {suggestions.map((suggestion, index) => (
+              <Link
+                key={index}
+                to={`/results?search_results=${suggestion}`}
+                className="font-robot pl-8 py-2 rounded hover:cursor-pointer hover:bg-slate-200 block"
+                onClick={() => {
+                  setSearchQuery(suggestion);
+                  setShowSuggestions(false);
+                }}
+              >
                 <FaSearch className="inline-block pr-1" />
                 {suggestion}
-              </p>
+              </Link>
             ))}
           </div>
         )}
