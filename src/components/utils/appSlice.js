@@ -6,9 +6,11 @@ const appSlice = createSlice({
   },
   reducers: {
     toggleMenu: (state, payload) => {
+      console.log("called with state");
       state.isMenuOpen = !state.isMenuOpen;
     },
     closeMenu: (state, payload) => {
+      console.log("close menu")
       state.isMenuOpen = false;
     },
   },

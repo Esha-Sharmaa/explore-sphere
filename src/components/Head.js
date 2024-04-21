@@ -8,6 +8,7 @@ import logo from "../images/png/White logo - no background.png"
 import { useEffect, useState } from "react";
 import { SEARCH_API } from "./utils/constant";
 import { cacheResult } from "./utils/searchSlice";
+import { Link } from "react-router-dom";
 
 const Head = () => {
 
@@ -48,6 +49,7 @@ const Head = () => {
 
 
   const handleClick = () => {
+    console.log("called");
     dispatch(toggleMenu());
   }
 
@@ -60,7 +62,9 @@ const Head = () => {
           onClick={handleClick}
           className="hover:cursor-pointer"
         />
-        <img src={logo} alt="logo" className="w-[180px]" />
+        <Link to={"/"}>
+          <img src={logo} alt="logo" className="w-[180px]" />
+        </Link>
       </div>
       <div className="flex  w-6/12 relative">
         <input
