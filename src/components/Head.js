@@ -49,7 +49,6 @@ const Head = () => {
 
 
   const handleClick = () => {
-    console.log("called");
     dispatch(toggleMenu());
   }
 
@@ -62,6 +61,7 @@ const Head = () => {
           onClick={handleClick}
           className="hover:cursor-pointer"
         />
+
         <Link to={"/"}>
           <img src={logo} alt="logo" className="w-[180px]" />
         </Link>
